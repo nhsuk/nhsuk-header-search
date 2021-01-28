@@ -1,0 +1,31 @@
+{
+  "name": "nhsuk-header-search",
+  "version": "0.0.1",
+  "description": "Accessibile autocomplete implementation for NHS.UK search",
+  "main": "dist/header-search.js",
+  "style": "dist/header-search.scss",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp",
+    "lint": "eslint ./src"
+  },
+  "author": "Tom Doughty",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.2.1",
+    "browser-sync": "^2.26.7",
+    "del": "^6.0.0",
+    "eslint": "^7.13.0",
+    "eslint-config-nhsuk": "^1.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
+    "nhsuk-frontend": "^4.1.0",
+    "webpack-stream": "^6.1.0"
+  },
+  "dependencies": {
+    "accessible-autocomplete": "^2.0.3"
+  }
+}
