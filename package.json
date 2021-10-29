@@ -22,7 +22,7 @@
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-sass": "^4.1.0",
-    "nhsuk-frontend": "^4.1.0",
+    "nhsuk-frontend": "^5.1.0",
     "webpack-stream": "^6.1.0"
   },
   "dependencies": {
