@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-header-search",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Accessibile autocomplete implementation for NHS.UK search",
   "main": "dist/header-search.js",
   "style": "dist/header-search.scss",
