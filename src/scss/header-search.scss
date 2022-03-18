@@ -25,19 +25,35 @@
   }
 }
 
+/* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
+.autocomplete__input {
+  -webkit-appearance: listbox; // sass-lint:disable-line prefixes /* [2] */
+  border-bottom-left-radius: $nhsuk-border-radius;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  border-top-left-radius: $nhsuk-border-radius;
+  border-top-right-radius: 0;
+
+  &:focus {
+    box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-color;
+    outline: $nhsuk-focus-width solid transparent;
+    outline-offset: $nhsuk-focus-width;
+  }
+
+  &::placeholder {
+    color: $color_nhsuk-grey-1;
+    font-size: $nhsuk-base-font-size;
+  }
+
+}
+
 @include mq($until: tablet) {
   /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
   .autocomplete__input {
     -ms-flex-positive: 2; /* [1] */
-    -webkit-appearance: listbox; // sass-lint:disable-line prefixes /* [2] */
     border-bottom: 1px solid $color_nhsuk-grey-3;
-    border-bottom-left-radius: $nhsuk-border-radius;
-    border-bottom-right-radius: 0;
     border-left: 1px solid $color_nhsuk-grey-3;
-    border-right: 0;
     border-top: 1px solid $color_nhsuk-grey-3;
-    border-top-left-radius: $nhsuk-border-radius;
-    border-top-right-radius: 0;
     flex-grow: 2;
     font-size: inherit;
     height: 52px; /* [3] */
@@ -48,9 +64,6 @@
 
     &:focus {
       border: $nhsuk-focus-width solid $nhsuk-focus-text-color;
-      box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-color;
-      outline: $nhsuk-focus-width solid transparent;
-      outline-offset: $nhsuk-focus-width;
       padding: 0 13px; /* [10] */
     }
   }
@@ -59,13 +72,7 @@
 @include mq($from: tablet) {
   /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
   .autocomplete__input {
-    -webkit-appearance: listbox; // sass-lint:disable-line prefixes /* [2] */
     border: 1px solid $color_nhsuk-white;
-    border-bottom-left-radius: $nhsuk-border-radius;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    border-top-left-radius: $nhsuk-border-radius;
-    border-top-right-radius: 0;
     font-size: $nhsuk-base-font-size;
     height: 40px; /* [3] */
     padding: 0 12px; /* [9] */
@@ -73,9 +80,6 @@
 
     &:focus {
       border: 2px solid $nhsuk-focus-text-color;
-      box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-color;
-      outline: $nhsuk-focus-width solid transparent;
-      outline-offset: $nhsuk-focus-width;
       padding: 0 11px; /* [10] */
     }
 
