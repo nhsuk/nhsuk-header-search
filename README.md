@@ -41,7 +41,10 @@ npm start
 A test site will be available at http://localhost:3000.
 
 ### Tests
-NB There are currently no automated tests associated with this project.
+Run automated tests locally with 
+```bash
+npm run test
+```
 To perform linting
 ```bash
 npm run lint
