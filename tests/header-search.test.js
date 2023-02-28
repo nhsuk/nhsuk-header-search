@@ -1,4 +1,4 @@
-import { suggestion, source, onConfirm, addFormEvents, } from "../src/js/header-search";
+import { suggestion, source, onConfirm, addFormEvents, initAutoComplete, } from "../src/js/header-search";
 import { JSDOM } from "jsdom";
 
 describe("suggestion function tests", () => {
@@ -83,11 +83,11 @@ describe("onConfirm function tests", () => {
 describe("addFormEvents function tests", () => {
   const realDocument = global.document;
   const dom = new JSDOM(`
-  <p>Hello world</p>
-  <button id="search-field">Search field </button>
-  <button id="search">search </button>
-  <button id="not-search-field">not-search-field </button>
-  `);
+    <div>
+      <form id="search"></form>
+      <input id="search-field"></input>
+      <input id="not-search-field"></input>
+    </div>`);
 
   beforeEach(() => {
     delete global.document;
@@ -138,3 +138,33 @@ describe("addFormEvents function tests", () => {
     expect(el.submit).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("initAutoComplete tests", () => {
+  const realDocument = global.document;
+
+  beforeEach(() => {
+    const dom = new JSDOM(`
+      <div id="parent">
+        <input id="search-field"></input>
+        <input id="autocomplete-container"></input>
+      </div>`);
+
+    delete global.document;
+    global.document = dom.window.document;
+  });
+
+  afterEach(() => {
+    global.document = realDocument;
+    jest.restoreAllMocks();
+  });
+
+  test("original search input removed", () => {
+    const input = document.getElementById('search-field');
+    const parent = document.getElementById("parent")
+    const container = document.getElementById('autocomplete-container');
+    expect(parent.childElementCount).toEqual(2);
+
+    initAutoComplete(input, container);
+    expect(parent.childElementCount).toEqual(1);
+    })
+})

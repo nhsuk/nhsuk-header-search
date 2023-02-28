@@ -79,19 +79,19 @@ export const addFormEvents = (el) => {
 /**
  * Initialises autocomplete
 */
-const initAutoComplete = () => {
+export const initAutoComplete = (inputEl, containerEl) => {
   // Remove original search input as it will be replaced by accessibleAutocomplete
-  input.parentNode.removeChild(input);
+  inputEl.parentNode.removeChild(inputEl);
 
   // Initialise accessibleAutocomplete
   AccessibleAutoComplete({
     confirmOnBlur: false,
-    element: container,
+    element: containerEl,
     id: 'search-field',
     minLength: 2,
-    name: input.name,
+    name: inputEl.name,
     onConfirm,
-    placeholder: input.placeholder,
+    placeholder: inputEl.placeholder,
     showNoOptionsFound: false,
     source,
     templates: {
@@ -99,10 +99,11 @@ const initAutoComplete = () => {
     },
   });
 };
+
 export default () => {
   // Add autocomplete functionality if required config options exist
   if (input && container) {
-    initAutoComplete();
+    initAutoComplete(input, container);
 
     // If form element exists then add events to add standard form functionality
     if (form) addFormEvents(form);
