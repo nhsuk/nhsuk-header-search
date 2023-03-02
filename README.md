@@ -47,6 +47,8 @@ To run the unit tests (with a code coverage report),
 ```bash
 npm run test
 ```
+
+### Lint
 To perform linting,
 ```bash
 npm run lint
