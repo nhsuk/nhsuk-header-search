@@ -38,17 +38,19 @@ Run the development server
 ```bash
 npm start
 ```
-A test site will be available at http://localhost:3000.
+A test site for local development will be available at http://localhost:3000.
 
 ### Tests
-Run automated tests locally with 
+The test suite currently consists only of unit tests, and the tests are written using [Jest](https://jestjs.io/en/). The test and relevant setup files can be found in the [tests folder](./tests/).
+
+To run the unit tests (with a code coverage report),
 ```bash
 npm run test
 ```
-To perform linting
+To perform linting,
 ```bash
 npm run lint
 ```
 
 ### Publication
-Publication of the npm package is preformed by GitHub action. Details of the GitHub action can be found in `nhsuk-header-search/.github/workflows/release.yml`
+Publication of the npm package is preformed by a GitHub action. Details of this action can be found in the [release.yml](.github/workflows/release.yml).
