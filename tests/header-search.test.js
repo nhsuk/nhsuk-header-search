@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { suggestion, source, onConfirm, addFormEvents, initAutoComplete, } from "../src/js/header-search";
 import { JSDOM } from "jsdom";
 
