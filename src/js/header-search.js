@@ -1,11 +1,12 @@
 import AccessibleAutoComplete from 'accessible-autocomplete';
 
 /**
- * HTML Elements needed for autocomplete
+ * HTML and search value elements needed for autocomplete
 */
 const form = document.getElementById('search');
 const input = document.getElementById('search-field');
 const container = document.getElementById('autocomplete-container');
+const inputSearchValue = window.SEARCH_INPUT_VALUE || '';
 
 /**
  * Check if search URLs are set as globals on window object,
@@ -88,6 +89,7 @@ export const initAutoComplete = (inputEl, containerEl) => {
     confirmOnBlur: false,
     element: containerEl,
     id: 'search-field',
+    defaultValue: inputSearchValue,
     minLength: 2,
     name: inputEl.name,
     onConfirm,
