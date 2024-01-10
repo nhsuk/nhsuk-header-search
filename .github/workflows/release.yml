@@ -52,12 +52,10 @@ jobs:
            path: ${{github.workspace}}/reports
 
       - name: Get package version
-        if: {{ github.ref == 'ref/tags/*' }}
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
 
       - name: Publish NPM package
-        if: {{ github.ref == 'ref/tags/*' }}
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
