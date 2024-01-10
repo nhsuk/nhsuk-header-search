@@ -87,9 +87,9 @@ export const initAutoComplete = (inputEl, containerEl) => {
   // Initialise accessibleAutocomplete
   AccessibleAutoComplete({
     confirmOnBlur: false,
+    defaultValue: inputSearchValue,
     element: containerEl,
     id: 'search-field',
-    defaultValue: inputSearchValue,
     minLength: 2,
     name: inputEl.name,
     onConfirm,
